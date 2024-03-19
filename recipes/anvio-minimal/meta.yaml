@@ -10,7 +10,9 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
+  run_exports:
+    - {{ pin_subpackage("anvio-minimal", max_pin="x.x.x") }}  
   noarch: python
   script: python -m pip install --no-deps --ignore-installed -vv .
 
@@ -61,3 +63,5 @@ extra:
   container:
     # extended-base generates en_US.UTF-8 locale and sets LC_ALL, LANG properly
     extended-base: True
+  additional-platforms:
+    - linux-aarch64
