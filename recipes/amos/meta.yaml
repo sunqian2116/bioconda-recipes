@@ -9,7 +9,9 @@ source:
     - patch
 
 build:
-  number: 5
+  number: 6
+  run_exports:
+    - {{ pin_subpackage("amos", max_pin="x.x.x") }}  
   # OSX failing due to missing dependencies in OSX branch
   skip: true  # [osx]
 
@@ -51,3 +53,5 @@ about:
 extra:
   identifiers:
     - biotools:amos
+  additional-platforms:
+    - linux-aarch64
