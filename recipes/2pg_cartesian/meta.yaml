@@ -10,7 +10,7 @@ source:
 
 build:
   skip: True  #[osx]
-  number: 7
+  number: 8
 
 requirements:
   build:
@@ -30,3 +30,7 @@ about:
   license_file: LICENSE
   license: Apache License, Version 2.0
   summary: 2pg cartesian is a framework of optimization algorithms for protein structure prediction.
+
+extra:
+  additional-platforms:
+    - linux-aarch64
