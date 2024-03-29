@@ -7,10 +7,7 @@ package:
   version: {{ version }}
 
 build:
-  number: 4
-  run_exports:
-    - {{ pin_subpackage("3seq", max_pin="x") }}  
-
+  number: 3
 source:
   url: https://gitlab.com/lamhm/{{ name|lower }}/-/archive/v{{ version }}/3seq-v{{ version }}.tar.gz
   sha256: {{ sha256 }}
@@ -30,10 +27,6 @@ test:
 
 about:
   home: https://mol.ax/software/3seq/
-  license: CC-BY-NC-SA-4.0
+  license: CC BY-NC-SA 4.0
   license_file: LICENSE.md
   summary: '3SEQ tests all sequence triplets in an alignment for a mosaic recombination signal.'
-
-extra:
-  additional-platforms:
-    - linux-aarch64
