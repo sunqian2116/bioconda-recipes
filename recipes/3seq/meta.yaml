@@ -9,7 +9,7 @@ package:
 build:
   number: 4
   run_exports:
-    - {{ pin_subpackage("3seq", max_pin="x.x.x") }}
+    - {{ pin_subpackage("3seq", max_pin="x.x.x") }}  
 
 source:
   url: https://gitlab.com/lamhm/{{ name|lower }}/-/archive/v{{ version }}/3seq-v{{ version }}.tar.gz
