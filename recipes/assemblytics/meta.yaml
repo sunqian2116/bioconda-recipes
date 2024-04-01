@@ -5,14 +5,14 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/MariaNattestad/Assemblytics/archive/v{{ version }}.tar.gz
-  sha256: 717abd67f63cef4110326d2d2805f6da7fdf8419745b09e24cd151f8abd1838f
+  url: https://github.com/MariaNattestad/Assemblytics/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 2c2e40fca046a8be2714d2d570cd8aa96bfd1b92e214197ba6141de9f21a9edc
   patches:
     - libexec.patch
 
 build:
   noarch: generic
-  number: 1
+  number: 2
 
 requirements:
   run:
@@ -30,10 +30,10 @@ test:
     - wget
     - unzip
   commands:
-    - wget http://assemblytics.com/user_data/ecoli/Escherichia_coli_MHAP_assembly.Assemblytics_results.zip
-    - unzip Escherichia_coli_MHAP_assembly.Assemblytics_results.zip
-    - Assemblytics user_data/*/Escherichia_coli_MHAP_assembly.Assemblytics.unique_length_filtered_l10000.delta.gz sample 10000 50 10000
-    - rm -rf user_data sample* Escherichia_coli_MHAP_assembly.Assemblytics_results.zip
+    - wget http://assemblytics.com/user_data/ecoli/E__coli_example.Assemblytics_results.zip
+    - unzip E__coli_example.Assemblytics_results.zip
+    - Assemblytics user_data/*/E__coli_example.Assemblytics.unique_length_filtered_l1000.delta.gz sample 10000 50 10000
+    - rm -rf user_data sample* E__coli_example.Assemblytics_results.zip
 
 about:
   home: http://assemblytics.com/
