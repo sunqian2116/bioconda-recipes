@@ -6,7 +6,9 @@ package :
   version : {{ version }}
 
 build:
-  number: 2
+  number: 5
+  run_exports:
+    - {{ pin_subpackage("aprfinder", max_pin="x.x.x") }}  
 
 source: 
   url: https://github.com/jaroslav-kubin/aprfinder/releases/download/v{{version}}/aprfinder-{{version}}.tar.gz
@@ -25,3 +27,7 @@ about:
 test:
   commands:
     - aprfinder --help
+
+extra:
+  additional-platforms:
+    - linux-aarch64
