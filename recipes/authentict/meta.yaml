@@ -10,7 +10,7 @@ source:
   sha256: b05b12d20e5275c3787a7e1311303ada6c038af66a15fa6875da33b4ec343991
   
 build: 
-  number: 0
+  number: 1
   script: "$PYTHON -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
@@ -43,3 +43,5 @@ extra:
     - StephanePeyregne
   identifiers:
     - doi:10.1186/s13059-020-02123-y
+  additional-platforms:
+    - linux-aarch64    
