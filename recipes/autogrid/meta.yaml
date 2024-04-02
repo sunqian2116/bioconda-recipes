@@ -6,7 +6,7 @@ package:
 
 build:
   version: {{ version }}
-  number: 3
+  number: 4
 
 source:
   url: https://autodock.scripps.edu/wp-content/uploads/sites/56/2021/10/autodocksuite-{{ version }}-src.tar.gz
@@ -30,3 +30,6 @@ about:
   license: GPL-2.0-only
   license_file: autogrid/COPYING
   summary: AutoDock is a suite of automated docking tools.
+extra:
+  additional-platforms:
+    - linux-aarch64  
