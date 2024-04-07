@@ -8,7 +8,9 @@ package:
 
 build:
   noarch: python
-  number: 0
+  number: 1
+  run_exports:
+    - {{ pin_subpackage("bart", max_pin="x.x.x") }}  
   script: python -m pip install --no-deps --ignore-installed .
 
 source:
@@ -19,10 +21,12 @@ requirements:
   host:
     - python >=3.7,<=3.10
     - pip
+    - pandas <=2.0.3
   run:
     - python >=3.7,<=3.10
     - kma
     - refseq_masher
+    - pandas <=2.0.3
 
 
 test:
