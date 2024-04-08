@@ -15,7 +15,7 @@ package:
   version: {{ version }}
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage(name, max_pin=None) }}
 source:
@@ -44,3 +44,7 @@ about:
   license: Custom
   license_file: LICENSE
   summary: "DALIGNER: Find all significant local alignments between reads"
+
+extra:
+  additional-platforms:
+    - linux-aarch64
