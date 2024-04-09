@@ -3,7 +3,9 @@ package:
   version: 2.0.1
 
 build:
-  number: 6
+  number: 7
+  run_exports:
+    - {{ pin_subpackage("bayescan", max_pin="x.x.x") }}  
   skip: True  # [osx]
 
 source:
@@ -28,3 +30,7 @@ about:
   home: http://cmpg.unibe.ch/software/BayeScan/
   license: GPL
   summary: Phylogenetics - Randomized Axelerated Maximum Likelihood.
+
+extra:
+  additional-platforms:
+    - linux-aarch64
