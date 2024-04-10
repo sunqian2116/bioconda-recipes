@@ -10,6 +10,10 @@ if [ "$(uname)" == "Darwin" ]; then
   sed -i.bak 's/-Wl,-Bstatic//' Makefile.nongs
   sed -i.bak 's/-Wl,-Bdynamic -lrt//' Makefile.nongs
 fi
+if [ `uname -m` == "aarch64" ];then
+  sed -i.bak "s/-msse4.2//" Makefile.nongs
+  sed -i.bak 's/smmintrin.h/sse2neon\/sse2neon.h/' guidedassembler.hpp
+fi
 
 LDFLAGS=-L${PREFIX}/lib
 
