@@ -11,8 +11,8 @@ source:
   sha256: 8daa6e9aa97c7ddf45ab0906307a4875a25bd99301be0838bb17e313d837446a
 
 build:
-  number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
+  number: 1
+  script: sed -i "s/=3.0.\*/=3.0/g" setup.py && {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
   noarch: python
 
 requirements:
