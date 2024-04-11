@@ -1,9 +1,10 @@
-{% set version = "3.2.1" %}
-{% set url = "https://github.com/refresh-bio/KMC/archive/v3.2.1.tar.gz" %}  # [linux]
-{% set sha256 = "7db333091a754508163a097c41720cf32a80abe160bef60f3fc82c8da1d67896" %}  # [linux]
-{% set url = "https://github.com/refresh-bio/kmc/releases/download/v3.2.1/kmc3.2.1.mac.tar.gz" %}  # [osx]
-{% set sha256 = "d4bd30d5e16bcbaac7f979f18e49e7447b0148709fb26f754490be9e3e766e73" %}  # [osx]
-
+{% set version = "3.2.2" %}
+{% set url = "https://github.com/refresh-bio/KMC/releases/download/v3.2.2/KMC3.2.2.linux.x64.tar.gz" %}  # [linux and x86_64]
+{% set sha256 = "0b5574c3d59448aa4d93caaa967df9ea18407eb046742e4a9d00ac50179f46df" %}  # [linux and x86_64]
+{% set url = "https://github.com/refresh-bio/KMC/releases/download/v3.2.2/KMC3.2.2.linux.arm64.tar.gz" %}  # [linux and aarch64]
+{% set sha256 = "8e64916ff67d8e330eaca43161584569e0f1ebdf9254c37532b73916e2eb88bf" %}  # [linux and aarch64]
+{% set url = "https://github.com/refresh-bio/KMC/releases/download/v3.2.2/KMC3.2.2.mac.x64.tar.gz" %}  # [osx]
+{% set sha256 = "c39f1729170d8fe9480e3b6b227b2038b79e646039f6125b842fc827d36d9502" %}  # [osx]
 
 package:
   name: kmc
@@ -12,25 +13,18 @@ package:
 source:
   url: {{ url }}
   sha256:  {{ sha256 }}
-  patches:
-    - Makefile.patch  # [linux]
 
 build:
-  number: 3
+  number: 4
 
 requirements:
-  build:
-    - make
-    - bzip2
-    - zlib
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-  host:
-    - zlib
-    - bzip2
   run:
     - zlib
     - bzip2
+
+test:
+  commands:
+    - kmc --help
 
 about:
   home: https://github.com/refresh-bio/kmc
@@ -41,6 +35,6 @@ about:
   license: GPL-3
   license_family: GPL
   license_file: gpl-3.0.txt
-test:
-  commands:
-    - kmc --help
+extra:
+  additional-platforms:
+    - linux-aarch64  
