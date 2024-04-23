@@ -13,7 +13,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 4
+  number: 5
   skip: true  # [osx]
   run_exports: # run_exports这个要配置上, 不然提交可能check不通过
     - {{ pin_subpackage('zorro', max_pin="x.x") }}
