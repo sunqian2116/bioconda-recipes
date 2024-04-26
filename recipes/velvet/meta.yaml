@@ -4,7 +4,7 @@ package:
   name: velvet
   version: {{ version }}
 build:
-  number: 6
+  number: 7
   skip: True  # [osx]
 source:
   url: https://github.com/dzerbino/velvet/archive/refs/tags/v{{ version }}.tar.gz
