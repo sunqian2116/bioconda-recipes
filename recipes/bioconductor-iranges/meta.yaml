@@ -24,7 +24,7 @@ requirements:
   host:
     - 'bioconductor-biocgenerics >=0.46.0,<0.47.0'
     - 'bioconductor-s4vectors >=0.38.0,<0.39.0'
-    - r-base
+    - 'r-base >=3.6.3'
     - libblas
     - liblapack
   run:
