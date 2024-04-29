@@ -9,7 +9,7 @@ source:
   sha256: c0e4887598628567b8fb1539445cf7b34a7ac6a8db2e52e10cc42cfa8e2202e2
 
 build:
-  number: 0
+  number: 2
   entry_points:
     - multiqc=multiqc.__main__:run_multiqc
   noarch: python
