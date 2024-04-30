@@ -25,10 +25,3 @@ do
 	chmod a+x $PREFIX/bin/$i
 done
 
-
-#sed -i '/#include <zlib.h>/d' ../work/include/seqan/stream/stream_compressor.h
-#sed -i '/#include <zlib.h>/d' ../work/include/seqan/stream.h
-
-#echo "${PREFIX}"
-#mkdir $PREFIX/bin/
-#cp bin/* $PREFIX/bin/
