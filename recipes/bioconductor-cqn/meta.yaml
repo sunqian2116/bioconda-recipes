@@ -23,13 +23,13 @@ build:
 requirements:
   host:
     - 'bioconductor-preprocesscore >=1.64.0,<1.65.0'
-    - r-base
+    - 'r-base >=3.6'
     - r-mclust
     - r-nor1mix
     - r-quantreg
   run:
     - 'bioconductor-preprocesscore >=1.64.0,<1.65.0'
-    - r-base
+    - 'r-base >=3.6'
     - r-mclust
     - r-nor1mix
     - r-quantreg
