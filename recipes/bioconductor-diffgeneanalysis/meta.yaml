@@ -13,7 +13,7 @@ source:
     - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
   md5: aa3d8c4ce3b83b8a6f02e87384dd649f
 build:
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -21,10 +21,10 @@ build:
   noarch: generic
 requirements:
   host:
-    - r-base
+    - 'r-base >=3.6.3'
     - 'r-minpack.lm >=1.0-4'
   run:
-    - r-base
+    - 'r-base >=3.6.3'
     - 'r-minpack.lm >=1.0-4'
 test:
   commands:
