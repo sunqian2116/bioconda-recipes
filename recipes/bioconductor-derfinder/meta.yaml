@@ -13,7 +13,7 @@ source:
     - 'https://depot.galaxyproject.org/software/bioconductor-{{ name }}/bioconductor-{{ name }}_{{ version }}_src_all.tar.gz'
   md5: a3ef629c180b64b0776c880164603c7b
 build:
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -37,7 +37,7 @@ requirements:
     - 'bioconductor-rsamtools >=2.18.0,<2.19.0'
     - 'bioconductor-rtracklayer >=1.62.0,<1.63.0'
     - 'bioconductor-s4vectors >=0.40.0,<0.41.0'
-    - r-base
+    - 'r-base >=3.6.3'
     - r-hmisc
   run:
     - 'bioconductor-annotationdbi >=1.64.0,<1.65.0'
@@ -55,7 +55,7 @@ requirements:
     - 'bioconductor-rsamtools >=2.18.0,<2.19.0'
     - 'bioconductor-rtracklayer >=1.62.0,<1.63.0'
     - 'bioconductor-s4vectors >=0.40.0,<0.41.0'
-    - r-base
+    - 'r-base >=3.6.3'
     - r-hmisc
 test:
   commands:
