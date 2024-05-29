@@ -13,11 +13,11 @@ source:
     - 'https://depot.galaxyproject.org/software/bioconductor-{{ name }}/bioconductor-{{ name }}_{{ version }}_src_all.tar.gz'
   md5: 5cf8ab297fc95d0a36b4359488c50358
 build:
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
-  run_exports: '{{ pin_subpackage("bioconductor-chipseq", max_pin="x.x") }}'
+#  run_exports: '{{ pin_subpackage("bioconductor-chipseq", max_pin="x.x") }}'
 # Suggests: BSgenome, GenomicFeatures, TxDb.Mmusculus.UCSC.mm9.knownGene, BSgenome.Mmusculus.UCSC.mm9, BiocStyle, knitr
 requirements:
   host:
