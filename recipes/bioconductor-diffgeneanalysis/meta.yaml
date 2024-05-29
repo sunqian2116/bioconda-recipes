@@ -21,10 +21,10 @@ build:
   noarch: generic
 requirements:
   host:
-    - 'r-base >=3.6.3'
+    - r-base 
     - 'r-minpack.lm >=1.0-4'
   run:
-    - 'r-base >=3.6.3'
+    - r-base
     - 'r-minpack.lm >=1.0-4'
 test:
   commands:
