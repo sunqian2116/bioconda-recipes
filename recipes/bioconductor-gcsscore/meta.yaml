@@ -13,7 +13,7 @@ source:
     - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
   md5: 80b3d2f6dfd1ff31fc433b40443e13b0
 build:
-  number: 2
+  number: 1
   run_exports:
     - {{ pin_subpackage('bioconductor-gcsscore', max_pin="x.x") }}
   rpaths:
