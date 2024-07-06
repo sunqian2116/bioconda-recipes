@@ -1,6 +1,6 @@
 {% set name = "psm-utils" %}
-{% set version = "0.8.0" %}
-{% set sha256 = "735f44dce1f99ac7821d61fe87df955fa935cb06377cdfa7fd18ead464850c49" %}
+{% set version = "0.9.0" %}
+{% set sha256 = "445bb667088d237d0b78f443d184b080a9ce6b33eab3b585295ce51194950abb" %}
 
 package:
   name: {{ name|lower }}
@@ -23,10 +23,9 @@ requirements:
   host:
     - pip
     - python >=3.7
-    - flit-core
   run:
     - python >=3.7
-    - pyteomics >=4
+    - pyteomics >=4,<4.7
     - pyopenms
     - lxml
     - psims
