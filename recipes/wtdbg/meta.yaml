@@ -15,10 +15,12 @@ build:
 requirements:
   build:
     - make
+    - sse2neon #[linux and aarch64]  
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
     - zlib
+    - sse2neon #[linux and aarch64]
   run:
     - zlib
 
