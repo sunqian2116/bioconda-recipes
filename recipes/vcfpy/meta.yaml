@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vvv
   run_exports:
     - {{ pin_subpackage('vcfpy', max_pin="x.x") }}
@@ -33,3 +33,4 @@ about:
   license: MIT
   license_family: MIT
   summary: Python 3 VCF library with good support for both reading and writing
+
