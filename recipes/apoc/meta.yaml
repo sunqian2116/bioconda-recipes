@@ -9,13 +9,19 @@ source:
     - apoc_gfortran.patch
 
 build:
-  number: 5
+  number: 6
+  run_exports:
+    - {{ pin_subpackage("apoc", max_pin="x.x.x") }}  
 
 requirements:
+  host:
+    - make
+    - {{ compiler('c') }} <=9.3.0
+    - {{ compiler('fortran') }} <=9.3.0
   build:
     - make
-    - {{ compiler('c') }}
-    - {{ compiler('fortran') }}
+    - {{ compiler('c') }} <=9.3.0
+    - {{ compiler('fortran') }} <=9.3.0
   run:
 
 test:
@@ -26,3 +32,7 @@ about:
   home: http://cssb.biology.gatech.edu/APoc
   license: "This software is freely available to ALL users."
   summary: Large-scale structural comparison of protein pockets
+
+extra:
+  additional-platforms:
+    - linux-aarch64

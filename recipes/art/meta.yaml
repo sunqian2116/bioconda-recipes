@@ -6,7 +6,9 @@ package:
   version: {{ version }}
 
 build:
-  number: 10
+  number: 11
+  run_exports:
+    - {{ pin_subpackage("art", max_pin="x.x.x") }}  
 
 source:
   url: https://www.niehs.nih.gov/research/resources/assets/docs/artsrcmountrainier2016.06.05linux.tgz
@@ -32,3 +34,7 @@ about:
   home: http://www.niehs.nih.gov/research/resources/software/biostatistics/art/
   license: GPLv2
   summary: 'Illumina, 454 and Solid read simulator'
+
+extra:
+  additional-platforms:
+    - linux-aarch64
