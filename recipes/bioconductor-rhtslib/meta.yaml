@@ -1,6 +1,6 @@
-{% set version = "2.4.0" %}
+{% set version = "2.2.0" %}
 {% set name = "Rhtslib" %}
-{% set bioc = "3.18" %}
+{% set bioc = "3.17" %}
 
 package:
   name: 'bioconductor-{{ name|lower }}'
@@ -11,24 +11,25 @@ source:
     - 'https://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/Archive/{{ name }}/{{ name }}_{{ version }}.tar.gz'
     - 'https://bioarchive.galaxyproject.org/{{ name }}_{{ version }}.tar.gz'
     - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
-  md5: 8aa7fa3050a484702c3065c797948ba8
+  md5: 862d4cd4c10064f45fc69c63969a4881
 build:
   number: 1
   rpaths:
     - lib/R/lib/
     - lib/
-  run_exports: '{{ pin_subpackage("bioconductor-rhtslib", max_pin="x.x") }}'
+  run_exports: # run_exports这个要配置上, 不然提交可能check不通过
+    - {{ pin_subpackage('bioconductor-rhtslib', max_pin="x.x") }}
 # Suggests: knitr, rmarkdown, BiocStyle
 # SystemRequirements: libbz2 & liblzma & libcurl (with header files), GNU make
 requirements:
   host:
-    - 'bioconductor-zlibbioc >=1.48.0,<1.49.0'
-    - r-base
+    - 'bioconductor-zlibbioc >=1.46.0,<1.47.0'
+    - 'r-base >=3.6.3'
     - libblas
     - liblapack
   run:
-    - 'bioconductor-zlibbioc >=1.48.0,<1.49.0'
-    - r-base
+    - 'bioconductor-zlibbioc >=1.46.0,<1.47.0'
+    - 'r-base >=3.6.3'
   build:
     - {{ compiler('c') }}
     - automake
@@ -46,4 +47,6 @@ extra:
   identifiers:
     - biotools:rhtslib
     - doi:10.1038/nmeth.3252
+  additional-platforms:
+    - linux-aarch64
 
