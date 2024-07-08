@@ -11,33 +11,46 @@ source:
 build:
   number: 3
   skip: True  # [py2k]
-  script: {{ PYTHON }} -m pip install . --ignore-installed --no-deps -vv
+  script:
+    - export CPLUS_INCLUDE_PATH=${PREFIX}/include
+      #- {{ PYTHON }} -m pip install --upgrade pip --ignore-installed --no-deps -vv
+      #    - sed -i "319c\             libraries = libs + ['gsl', 'stat', 'gslcblas']," setup.py
+      #- {{ PYTHON }} -m pip install packaging tables --ignore-installed --no-deps -vv
+    - {{ PYTHON }} -m pip install . --ignore-installed --no-deps -vv
 
 requirements:
   build:
+    - boost==1.70.0
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - python
+    - python<=3.9
     - pip
     - cython
     - numpy
     - boost-cpp
+    - boost==1.70.0
     - gsl
     - zlib
     - hdf5
     - blosc
+    - setuptools<=50.0.0
+    - scipy
+    - packaging
   run:
-    - python
+    - python<=3.9
     - numpy
     - scipy
     - pyzmq
     - pytables
     - pycurl
     - gsl
+    - boost==1.70.0
     - boost-cpp
     - zlib
-
+    - setuptools<=50.0.0
+    - scipy
+    - packaging
 test:
   # Python imports
   imports:
