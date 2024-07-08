@@ -14,6 +14,8 @@ source:
   md5: 80b3d2f6dfd1ff31fc433b40443e13b0
 build:
   number: 0
+  run_exports:
+    - {{ pin_subpackage('bioconductor-gcsscore', max_pin="x.x") }}
   rpaths:
     - lib/R/lib/
     - lib/
