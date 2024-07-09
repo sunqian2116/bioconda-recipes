@@ -23,10 +23,10 @@ build:
 # Suggests: knitr, RUnit, testthat, BiocGenerics, rmarkdown, markdown
 requirements:
   host:
-    - 'r-base >=3.6.3'
+    - r-base
     - r-ggplot2
   run:
-    - 'r-base >=3.6.3'
+    - r-base
     - r-ggplot2
 test:
   commands:
