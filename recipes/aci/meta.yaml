@@ -11,7 +11,7 @@ source:
   sha256: 06cf71bde19ecb8ac760c14548b3cdb24f99755da36d53daeea62cf053f5b12c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - aci=aci.aci:main
