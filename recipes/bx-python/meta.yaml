@@ -1,35 +1,78 @@
-{% set name = "bx-python" %}
-{% set version = "0.11.0" %}
-{% set sha256 = "2cf8872572817e0d36145cc2711889df5729987ffed4e51280da1e3c2ccb9429" %}
+# This file created by conda-build 3.21.4
+# meta.yaml template originally from:
+# /opt/recipe, last modified Tue Feb 22 19:56:24 2022
+# ------------------------------------------------
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
-
+  name: bx-python
+  version: 0.8.13
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/bx-python-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
-
+  sha256: 5989170d13367e9f811014803bafdbcc893024d63e98b66f734511e4f9e90c7d
+  url: https://pypi.io/packages/source/b/bx-python/bx-python-0.8.13.tar.gz
 build:
-  number: 1
-  skip: True  # [py < 38]
-  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --no-cache-dir -vvv
-  run_exports:
-    - {{ pin_subpackage(name|lower, max_pin='x.x') }}
-
+  number: '1'
+  script: $PREFIX/bin/python
+    -m pip install --no-deps --ignore-installed --no-cache-dir -vvv .
+  string: py39h6471ffd_1_kp
 requirements:
   build:
-    - {{ compiler('cxx') }}
+    - _libgcc_mutex 0.1 main
+    - _openmp_mutex 4.5 2_gnu
+    - binutils_impl_linux-aarch64 2.36.1 h0d3074b_3
+    - binutils_linux-aarch64 2.36 h7854541_10
+    - gcc_impl_linux-aarch64 10.3.0 ha07e0e6_16
+    - gcc_linux-aarch64 10.3.0 h4e3e293_10
+    - kernel-headers_linux-aarch64 4.14.214 h1cb168f_14
+    - ld_impl_linux-aarch64 2.36.1 h0ab8de2_3
+    - libgcc-devel_linux-aarch64 10.3.0 h8e480ec_16
+    - libgcc-ng 11.2.0 h1234567_1
+    - libgomp 11.2.0 h1234567_1
+    - libsanitizer 10.3.0 h971684a_16
+    - libstdcxx-ng 11.2.0 h1234567_1
+    - sysroot_linux-aarch64 2.26 h4744778_14
   host:
-    - python
-    - cython
-    - pip
-    - numpy
-    - zlib
+    - _libgcc_mutex 0.1 main
+    - _openmp_mutex 4.5 2_gnu
+    - bzip2 1.0.8 hfd63f10_2
+    - ca-certificates 2021.10.8 h4fd8a4c_0
+    - cython 0.29.28 py39h2f4d8fa_0 
+    - ld_impl_linux-aarch64 2.36.1 h0ab8de2_3
+    - libblas 3.9.0 13_linuxaarch64_openblas
+    - libcblas 3.9.0 13_linuxaarch64_openblas
+    - libffi 3.4.2 h22f4aa5_4
+    - libgcc-ng 11.2.0 h1234567_1
+    - libgfortran-ng 11.2.0 h6e398d7_1
+    - libgfortran5 11.2.0 h1234567_1
+    - libgomp 11.2.0 h1234567_1
+    - liblapack 3.9.0 13_linuxaarch64_openblas
+    - libnsl 2.0.0 hf897c2e_0
+    - libopenblas 0.3.18 hac96964_0
+    - libstdcxx-ng 11.2.0 h1234567_1
+    - libuuid 2.32.1 hf897c2e_1000
+    - libzlib 1.2.11 h4e544f5_1014
+    - lzo 2.10 hfd63f10_4
+    - ncurses 6.3 h998d150_3
+    - numpy 1.19.5 py39h53e47e4_3
+    - openssl 3.0.0 hf897c2e_1
+    - pip 22.0.3 pyhd8ed1ab_0
+    - python 3.9.10 h1b383ca_2_cpython
+    - python-lzo 1.14 py39h265373d_0_kp
+    - python_abi 3.9 2_cp39
+    - readline 8.1.2 h2f4d8fa_1 
+    - setuptools 60.9.3 py39ha65689a_0
+    - sqlite 3.37.0 h6632b73_0
+    - tk 8.6.12 hd8af866_0
+    - tzdata 2021e hda174b7_0
+    - wheel 0.37.1 pyhd3eb1b0_0
+    - xz 5.2.5 h2f4d8fa_1
+    - zlib 1.2.11 h4e544f5_1014
   run:
-    - python
-    - {{ pin_compatible('numpy') }}
-
+    - libgcc-ng >=10.3.0
+    - libzlib >=1.2.11,<1.3.0a0
+    - numpy <1.24.0
+    - python >=3.9,<3.10.0a0
+    - python-lzo
+    - python_abi 3.9.* *_cp39
 test:
   imports:
     - bx
@@ -51,18 +94,16 @@ test:
     - bx.seq
     - bx.tabular
     - bx_extras
-
 about:
-  home: 'https://github.com/bxlab/bx-python'
-  summary: 'Tools for manipulating biological data, particularly multiple sequence alignments'
+  home: https://github.com/bxlab/bx-python
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  doc_url: 'https://buildmedia.readthedocs.org/media/pdf/bx-python/latest/bx-python.pdf'
-  dev_url: 'https://github.com/bxlab/bx-python'
-
+  summary: Tools for manipulating biological data, particularly multiple sequence
+    alignments
 extra:
-  identifiers:
-    - biotools:bx-python
-  additional-platforms:
-    - linux-aarch64
+  container:
+    extended-base: true
+  copy_test_source_files: true
+  final: true
+
