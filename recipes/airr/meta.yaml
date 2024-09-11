@@ -10,7 +10,7 @@ source:
   sha256: febc0a881bf46b1a9c29ac6a7089dd733ff9120d114585e75dede26403f68d42
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - airr-tools=airr.tools:main
