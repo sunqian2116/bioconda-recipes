@@ -7,7 +7,7 @@ source:
   md5: e3f150f45026af6d7513b16094bd54e9
 
 build:
-  number: 4
+  number: 5
   skip: True #[osx]
 
 requirements:
