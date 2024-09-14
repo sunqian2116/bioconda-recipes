@@ -14,7 +14,7 @@ fi
 mkdir build
 cd build
 
-cmake -D CMAKE_INSTALL_PREFIX:PATH="${PREFIX}" -DUSE_LSD2=ON -DIQTREE_FLAGS=omp ..
+cmake -D CMAKE_INSTALL_PREFIX:PATH="${PREFIX}" -DUSE_LSD2=ON -DIQTREE_FLAGS=omp .. -D CMAKE_CXX_FLAGS="$CMAKE_CXX_FLAGS -std=c++11"
 
 make --jobs "${CPU_COUNT}"
 make install
