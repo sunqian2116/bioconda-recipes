@@ -10,7 +10,7 @@ source:
   sha256: bd5d66e5952565dc6559cdc40d97482d41a3b8a30ea6e37d5ec564b5d8f3eee1
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "sed -i.bak '42d' setup.py && {{ PYTHON }} -m pip install . --no-deps -vv"
 
