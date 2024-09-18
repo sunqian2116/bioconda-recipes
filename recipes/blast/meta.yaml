@@ -55,7 +55,7 @@ requirements:
     - entrez-direct
     - ncbi-vdb
     - curl
-
+	
 test:
   files:
     - test.fa
@@ -101,3 +101,7 @@ extra:
   recipe-maintainers:
     - christiam
     - epruesse
+	
+	
+	
+
