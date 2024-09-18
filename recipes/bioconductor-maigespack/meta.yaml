@@ -14,6 +14,8 @@ source:
   md5: 118a586912fcef7e97526e4b2d142729
 build:
   number: 0
+  run_exports: # run_exports这个要配置上, 不然提交可能check不通过
+    - {{ pin_subpackage('bioconductor-maigespack', max_pin="x.x") }}
   rpaths:
     - lib/R/lib/
     - lib/
@@ -53,4 +55,6 @@ extra:
     name: bioconductor-maigespack
     path: recipes/bioconductor-maigespack
     version: 1.44.0
+  additional-platforms:
+    - linux-aarch64
 

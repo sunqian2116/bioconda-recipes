@@ -1,6 +1,6 @@
 {% set version = "0.99.5" %}
 {% set name = "ENCODExplorerData" %}
-{% set bioc = "3.18" %}
+{% set bioc = "3.17" %}
 
 package:
   name: 'bioconductor-{{ name|lower }}'
@@ -13,11 +13,12 @@ source:
     - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
   md5: c6d9b491548529db0739b79c98adacd7
 build:
-  number: 8
+  number: 7
+  run_exports: # run_exports这个要配置上, 不然提交可能check不通过
+    - {{ pin_subpackage('bioconductor-encodexplorerdata', max_pin="x.x") }}
   rpaths:
     - lib/R/lib/
     - lib/
-  run_exports: '{{ pin_subpackage("bioconductor-encodexplorerdata", max_pin="x.x") }}'
   noarch: generic
 # Suggests: AnnotationHub, RUnit, BiocGenerics, knitr, curl, httr
 requirements:
@@ -32,7 +33,7 @@ requirements:
     - r-jsonlite
     - r-rcurl
     - curl
-    - 'bioconductor-data-packages >=20231203'
+    - bioconductor-data-packages>=20230706
 test:
   commands:
     - '$R -e "library(''{{ name }}'')"'
