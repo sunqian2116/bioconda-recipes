@@ -9,10 +9,13 @@ package:
 source:
   url: https://github.com/marbl/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - 0001-add-include.patch
+    - 0002-include-limits-patch.patch
+    - 0003-Remove-memcopy-symbol-hack.patch  # [linux and aarch64]
 
 build:
-  skip: True  # [osx]
-  number: 6
+  number: 7
 
 requirements:
   build:
@@ -22,12 +25,12 @@ requirements:
     - automake
   host:
     - zlib
-    - capnproto
+    - capnproto-nossl
     - gsl
     - libcblas
   run:
     - zlib
-    - capnproto
+    - capnproto-nossl
     - gsl
     - libcblas
 
@@ -40,3 +43,4 @@ about:
   home: https://github.com/marbl/{{ name }}
   license: https://github.com/marbl/{{ name }}/blob/master/LICENSE.txt 
   summary: Fast sequence distance estimator that uses MinHash
+
