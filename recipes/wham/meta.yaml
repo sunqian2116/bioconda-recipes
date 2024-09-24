@@ -1,49 +1,69 @@
-{% set version = "1.8.0.1.2017.05.03" %}
-{% set revision = "4e8c9bee568211596cdc634d15600114e75d2619" %}
+# This file created by conda-build 3.22.0
+# meta.yaml template originally from:
+# /home/kunpeng/bioconda-recipes/recipes/wham, last modified Wed Nov  8 15:48:13 2023
+# ------------------------------------------------
 
 package:
   name: wham
-  version: '{{version}}'
-
+  version: 1.8.0.1.2017.05.03
 source:
-  # Needs Git for recursive bamtools retrieval:
-  git_url: https://github.com/zeeev/wham.git
-  git_rev: {{ revision }}
   patches:
-    # Fix issues with build on version of bamtools included in wham
-    # https://github.com/pezmaster31/bamtools/pull/150
     - bamtools-gcc-fix.diff
-
+  path: /root/wham
 build:
-  number: 2
-  skip: true # [osx]
-
+  number: '2'
+  string: '2'
 requirements:
   build:
-    - make
-    - {{ compiler('cxx') }}
-    - {{ compiler('c') }}
-    - cmake
+    - _openmp_mutex 4.5 0_gnu
+    - binutils_impl_linux-aarch64 2.29.1 h829e518_5
+    - binutils_linux-aarch64 2.29.1 h1dbaa89_17
+    - bzip2 1.0.8 h516909a_2
+    - ca-certificates 2023.08.22 hd43f75c_0
+    - cmake 3.17.0 h28c56e5_0
+    - expat 2.2.9 h4c5d2ac_2
+    - gcc_impl_linux-aarch64 7.3.0 hfeefbbc_5
+    - gcc_linux-aarch64 7.3.0 h98564e2_17
+    - gxx_impl_linux-aarch64 7.3.0 hca8aa85_5
+    - gxx_linux-aarch64 7.3.0 h98564e2_17
+    - krb5 1.17.1 h14de66a_0
+    - libcurl 7.69.1 hf7181ac_0
+    - libedit 3.1.20170329 hf8c457e_1001
+    - libgcc-ng 7.3.0 h8e86211_5
+    - libgomp 7.3.0 h8e86211_5
+    - libssh2 1.8.2 h22169c7_2
+    - libstdcxx-ng 7.3.0 hca8aa85_5
+    - libuv 1.34.0 h516909a_0
+    - make 4.3 h516909a_0
+    - ncurses 6.1 hf484d3e_1002
+    - openssl 1.1.1g h516909a_0
+    - rhash 1.3.6 h14c3975_1001
+    - tk 8.6.10 hed695b0_0
+    - xz 5.2.5 h6dd45c4_0
+    - zlib 1.2.11 h516909a_1006
   host:
-    - zlib
+    - _libgcc_mutex 0.1 main
+    - _openmp_mutex 5.1 51_gnu
+    - libgcc-ng 11.2.0 h1234567_1
+    - libgomp 11.2.0 h1234567_1
+    - zlib 1.2.13 h998d150_0
   run:
-    - zlib
-
+    - zlib >=1.2.13,<1.3.0a0
 test:
   commands:
     - whamg --help 2>&1 | grep Version
     - wham --help 2>&1 | grep WHAM-BAM
-
 about:
   home: https://github.com/zeeev/wham
   license: MIT
   license_family: MIT
   summary: Structural variant detection and association testing
-
 extra:
+  copy_test_source_files: true
+  final: true
   identifiers:
     - biotools:Wham6216
   skip-lints:
-    # This needs git for recursive checkouts
-    - uses_vcs_url
     - missing_hash
+    - uses_vcs_url
+
