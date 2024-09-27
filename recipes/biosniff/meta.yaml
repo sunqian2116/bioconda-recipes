@@ -12,7 +12,7 @@ source:
 
 build:
   preserve_egg_dir: True
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - biosniff=biosniff.main:sniffer
