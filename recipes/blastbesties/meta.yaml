@@ -10,7 +10,7 @@ source:
   sha256: 6dce21a9f92d8e47875a020c279e420ed5077d00ced3534844993a26e779e57d
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - blastbesties = blastbesties.app:main
