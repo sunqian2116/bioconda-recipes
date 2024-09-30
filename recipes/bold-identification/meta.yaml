@@ -10,7 +10,7 @@ source:
   sha256: "7a49d2d9c7fb0108585a6a866574b33355bb954500ff38511e281433e5b76007"
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - bold_identification=bold_identification.BOLD_identification:main
