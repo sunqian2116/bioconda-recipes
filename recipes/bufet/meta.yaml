@@ -3,7 +3,7 @@ package:
   version: 1.0  
 
 build:
-  number: 1
+  number: 2
 
 source:
   url: https://github.com/diwis/BUFET/archive/f8bdc647b63326dabc3eb4b100995397acef7e6a.zip
