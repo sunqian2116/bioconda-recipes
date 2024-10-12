@@ -29,6 +29,7 @@ requirements:
     - make
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - gcc      
   host:
     - xz
     - bzip2
@@ -37,6 +38,7 @@ requirements:
     - xz
     - bzip2
     - zlib
+    - gcc
 
 test:
   commands:
