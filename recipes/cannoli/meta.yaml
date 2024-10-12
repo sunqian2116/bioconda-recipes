@@ -9,7 +9,7 @@ source:
   sha256: 4cfbbe1d2085298e62d4143116f8776ef2c91854f36a0803c27164c51b541e12
 
 build:
-  number: 0
+  number: 1
   noarch: generic
   run_exports:
     - {{ pin_subpackage('cannoli', max_pin="1") }}
