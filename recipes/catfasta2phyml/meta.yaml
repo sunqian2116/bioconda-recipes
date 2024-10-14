@@ -7,12 +7,12 @@ source:
   sha256: f4ea5aef5aa21d15d84436262f06b79a004b7017ab7a433019fe903aec995fdb
 
 build:
-  number: 0
+  number: 1
   noarch: generic
 
 requirements:
   run:
-    - perl
+    - perl >=5.32.0
 
 test:
   commands:

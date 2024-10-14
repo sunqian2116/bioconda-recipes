@@ -13,7 +13,7 @@ source:
     - 'https://depot.galaxyproject.org/software/bioconductor-{{ name|lower }}/bioconductor-{{ name|lower }}_{{ version }}_src_all.tar.gz'
   md5: 98c2672a3b694f6d1989cdd4f00cd8e0
 build:
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -35,7 +35,7 @@ requirements:
     - 'bioconductor-preprocesscore >=1.64.0,<1.65.0'
     - 'bioconductor-vsn >=3.70.0,<3.71.0'
     - r-apcluster
-    - r-base
+    - 'r-base >=3.6.3'
     - r-cluster
     - r-cp4p
     - r-dendextend
@@ -82,7 +82,7 @@ requirements:
     - 'bioconductor-preprocesscore >=1.64.0,<1.65.0'
     - 'bioconductor-vsn >=3.70.0,<3.71.0'
     - r-apcluster
-    - r-base
+    - 'r-base >=3.6.3'
     - r-cluster
     - r-cp4p
     - r-dendextend
