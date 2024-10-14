@@ -1,24 +1,22 @@
 {% set name = "vg" %}
-{% set version = "1.55.0" %}
+{% set version = "1.52.0" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://github.com/vgteam/vg/releases/download/v{{ version }}/vg
-  sha256: 2c602084b4eab7b50147fba31f51e126135d7ceaaf405632445bff96d68ba6c7
-
+  url: https://521github.com/vgteam/vg/releases/download/v{{ version }}/vg-arm64
+  sha256: 66f507b0870a63644f6d745df70db92adc91faad08694e64d523988fa514362b
 build:
   number: 0
   skip: true  # [osx]
   script:
     - mkdir -p ${PREFIX}/bin
-    - cp vg ${PREFIX}/bin/
+    - mv vg-arm64 ${PREFIX}/bin/vg
     - chmod +x ${PREFIX}/bin/vg
   run_exports:
     - {{ pin_subpackage('vg', max_pin="x") }}
-
 test:
   commands:
     - vg help
