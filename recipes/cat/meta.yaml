@@ -1,5 +1,5 @@
 {% set version = "5.3" %}
-{% set sha256 = "2893ee18b0d5b24a291edd7d8ca1738d40ea189d18ba0fb7aad3e38973a787e7" %}
+{% set sha256 = "8a9fc92a83993de4f7a7d5900f2937b5dc3d167c8969a022bfdf7e58e7ff3f1c" %}
 
 package:
   name: cat
@@ -10,7 +10,7 @@ source:
   sha256: {{ sha256 }} 
 
 build:
-  number: 0
+  number: 1
   noarch: generic
   run_exports:
     - {{ pin_subpackage("cat", max_pin="x") }}
