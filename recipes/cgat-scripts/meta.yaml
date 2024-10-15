@@ -10,7 +10,7 @@ source:
 
 build:
   skip: True # [not py3k]
-  number: 2
+  number: 
   entry_points:
     - cgat = CGAT.cgat:main
 
