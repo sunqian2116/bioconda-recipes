@@ -10,7 +10,7 @@ source:
   sha256: 2bf72a64d383d260dfd33c17f7d823f303973947b339fd32ee39e2a8d54ec241
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - checkatlas = checkatlas.__main__:main
     - checkatlas-workflow = checkatlas.checkatlas_workflow:main
