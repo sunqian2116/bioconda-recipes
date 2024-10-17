@@ -10,7 +10,7 @@ source:
   sha256: ac17733ce397cfd3499bfed044ed0765c1bccee581d1fbb5437a8b9332a59b6d
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - chipr=chipr.__main__:main
