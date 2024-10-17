@@ -12,7 +12,7 @@ source:
 
 build:
   number: 13
-  skip: True [osx or not py2k]
+ 
 
 extra:
   skip-lints:
@@ -26,12 +26,15 @@ requirements:
     - autoconf
     - libtool
     - make
+    - sse2neon  #[linux and aarch64]
   host:
     - htslib
     - cython
     - python
     - setuptools
     - zlib
+    - sse2neon  #[linux and aarch64]
+
 
   run:
     - python
