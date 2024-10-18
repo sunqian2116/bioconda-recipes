@@ -16,7 +16,7 @@ build:
 requirements:
   run:
     - perl
-    - biopython
+    - biopython <=1.76
     - bedtools
     - pybedtools
     - datamash
