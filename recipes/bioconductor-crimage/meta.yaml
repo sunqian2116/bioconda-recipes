@@ -54,4 +54,3 @@ extra:
     name: bioconductor-crimage
     path: recipes/bioconductor-crimage
     version: 1.28.0
-
