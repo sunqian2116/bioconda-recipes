@@ -3,7 +3,7 @@ package:
   version: "3.0.19"
 
 build:
-  number: 1
+  number: 2
   script: python -m pip install --no-deps --ignore-installed .
 
 source:
