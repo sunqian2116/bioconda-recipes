@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 build:
-  number: 3
+  number: 4
   noarch: python
   run_exports:
     - {{ pin_subpackage(name|lower, max_pin="x.x") }}
@@ -21,13 +21,13 @@ source:
 
 requirements:
   host:
-    - python >=3.8
+    - python 3.9.9
     - pip
     - rust
     - maturin
     - zlib
   run:
-    - python >=3.8
+    - python 3.9.9
 
 test:
   imports:

@@ -14,8 +14,10 @@ source:
     - 2to3.patch
 
 build:
-  number: 8
+  number: 9
   detect_binary_files_with_prefix: True
+  run_exports:
+    - {{ pin_subpackage('meme', max_pin="x.x") }}
 
 requirements:
   build:
@@ -23,8 +25,8 @@ requirements:
     - {{ compiler('c') }}
   host:
     - yaml
-    - python
-    - perl
+    - python 3.9.9
+    - perl 5.32.1.*
     - ghostscript
     - zlib
     - libxslt
@@ -39,8 +41,8 @@ requirements:
   run:
     - yaml
     - expat
-    - python
-    - perl
+    - python 3.9.9
+    - perl 5.32.1.*
     - zlib
     - libxslt
     - libxml2
@@ -68,3 +70,5 @@ extra:
   container:
     # openmpi needs ssh/rsh
     extended-base: true
+  additional-platforms:
+    - linux-aarch64
